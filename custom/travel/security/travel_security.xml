@@ -4,6 +4,51 @@
     <field name="name">Travel</field>
     <field name="res_model">member.list</field>
     <field name="view_mode">tree,form</field>
-    </record>
-</odoo>
+</record>
 
+    <record id="crm_lost_reason_view_tree" model="ir.ui.view">
+        <field name="name">crm.lost.reason.tree</field>
+        <field name="model">member.list</field>
+        <field name="arch" type="xml">
+            <tree string="Channel">
+                <field name="member_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="crm_lost_reason_view_form" model="ir.ui.view">
+        <field name="name">crm.lost.reason.form</field>
+        <field name="model">member.list</field>
+        <field name="arch" type="xml">
+            <form string="Test">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="member_name"/>
+                        </group>
+                        <group>
+                            <field name="member_point"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_delivery_carrier_search" model="ir.ui.view">
+            <field name="name">delivery.carrier.search</field>
+            <field name="model">member.list</field>
+            <field name="arch" type="xml">
+                <search string="Delivery Carrier">
+                    <field name="member_name" string="Carrier" />
+                    <field name="active"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Provider" name="provider" context="{'group_by':'state', 'residual_visible':True}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+</odoo>
