@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+            id="fashion_customer_menu_root"
+            name="Main Menu"
+            sequence="10"
+    />
+
+    <menuitem
+            id="fashion_customer_menu_action"
+            action="fashion_model_action"
+            parent="fashion_customer_menu_root"
+            sequence="10"
+    />
+</odoo>

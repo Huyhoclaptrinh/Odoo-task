@@ -1,18 +1,17 @@
 {
-    'name': "Travel",
+    'name': "Fashion",
     'version': '1.0',
     'depends': ['base'],
     'author': "Huy",
-    'category': 'Tour',
+    'category': '',
     'description': """
     Description text
     """,
-    # data files always loaded at installation
+    # # data files always loaded at installation
     'data': [
         'security/ir.model.access.csv',
-        # 'security/riccha.csv',
-        'security/travel_security.xml',
-        'views/travel_menu.xml'
+        'views/fashion_customer_menus.xml',
+        'views/fashion_customer_views.xml',
     ],
     # # # data files containing optionally loaded demonstration data
     # 'demo': [
