@@ -17,11 +17,12 @@ class ProductModel(models.Model):
     product_release_date = fields.Date(string="Release Date", copy=False, default=lambda self: fields.Datetime.now())
     customer_id = fields.Many2one('fashion.customer',string="Customer", required=True)
 
-    @api.depends('product_sale_deal','product_number')
+    @api.depends(   'product_number')
     def _onchange_sale(self):
-        for i in range(1,11):
-            if self.product_number == 10*i:
-                self.product_sale_deal = 1
+        deals_list = [x for x in range(0,101,10)]  # List of product numbers with associated deals
+        for record in self:
+            if record.product_number in deals_list:
+                record.product_sale_deal = 1  # Set the deal value as needed
 
 
 
