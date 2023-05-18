@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="lazada_order_action_view" model="ir.actions.act_window">
+        <field name="name">Loan Order</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="lazada_order_tree" model="ir.ui.view">
+        <field name="name">lazada.order.tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <tree string="Sales Orders" sample="1">
+                <field name="loan_order"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="lazada_order_form" model="ir.ui.view">
+        <field name="name">lazada.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <form string="Sales Order" class="o_sale_order">
+                <sheet>
+                    <group name="sale.sale_header">
+                        <field name="loan_order"/>
+<!--                        <group name="sale.partner_details">-->
+<!--                            <field name="loan_order"/>-->
+<!--                        </group>-->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

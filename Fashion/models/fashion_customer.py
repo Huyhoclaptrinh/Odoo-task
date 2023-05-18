@@ -13,5 +13,8 @@ class CustomerModel(models.Model):
     customer_point = fields.Integer(string="Customer Point", required=True, related="products_id.product_sale_deal")
     products_id = fields.One2many('fashion.product','customer_id',string="Products", required=True)
 
-
+    @api.model
+    def create(self, vals_list):
+        res = super(CustomerModel,self).create(vals_list)
+        return res
 

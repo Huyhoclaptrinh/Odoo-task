@@ -1,5 +1,5 @@
 {
-    'name': "Fashion",
+    'name': "Lazada",
     'version': '1.0',
     'depends': ['base'],
     'author': "Huy",
@@ -10,14 +10,15 @@
     # # data files always loaded at installation
     'data': [
         'security/ir.model.access.csv',
-        'views/fashion_customer_menus.xml',
-        'views/fashion_customer_views.xml',
-        # 'views/fashion_product_menus.xml',
-        'views/fashion_product_views.xml',
+        'views/lazada_order_views.xml',
+        'views/lazada_menus.xml',
     ],
     # # # data files containing optionally loaded demonstration data
     # 'demo': [
     #     'views/traveler_views.xml',
     # ],
+    'depends': [
+        'sale',
+    ],
     'license': 'LGPL-3',
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="lazada_menu"
+            name="Lazada">
+        <menuitem id="lazada_action_menu"
+                  name="Lazada"
+            action="lazada_order_action_view"/>
+
+    </menuitem>
+</odoo>
