@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record model="ir.module.category" id="module_category_fashion_customer">
+            <field name="name">Customer Category</field>
+            <field name="description">Helping in dealing with some stuffs for customer</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="group_fashion_customer_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_category_fashion_customer"/>
+            <field name="comment">Show list of cutomers</field>
+        </record>
+
+        <record id="group_fashion_customer_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="module_category_fashion_customer"/>
+            <field name="implied_ids" eval="[(4,ref('group_fashion_customer_user'))]"/>
+            <field name="comment">Show list of cutomers</field>
+        </record>
+
+        <record model="ir.rule" id="fashion_customer_user_rule">
+            <field name="name">Fashion Customer User</field>
+            <field name="model_id" ref="model_fashion_customer"/>
+            <field name="domain_force">[('customer_gender', '=', 'user')]</field>
+            <field name="groups" eval="[(4, ref('group_fashion_customer_user'))]"/>
+        </record>
+    </data>
+
+<!--    <record id="group_fashion_product" model="res.groups">-->
+<!--        <field name="name">fashion Product</field>-->
+<!--        <field name="category_id" ref="base.module_category_hidden"/>-->
+<!--    </record>-->
+
+<!--    <record id="fashion_customer_rule" model="ir.rule">-->
+<!--        <field name="name">fashion.customer.user</field>-->
+<!--        <field name="model_id" ref="fashion_customer"/>-->
+<!--        <field name="domain_force">[(1, '=', 1)]</field>-->
+<!--        <field name="groups" eval="[(4, ref('group_fashion_customer'))]"/>-->
+<!--    </record>-->
+
+</odoo>

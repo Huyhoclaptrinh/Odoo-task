@@ -2,7 +2,7 @@ from odoo import fields, models, api
 
 class SaleOrder(models.Model):
     _inherit = ['sale.order']
-    _description = "Lazada Sales Order"
+    _description = "lazada Sales Order"
 
     loan_order = fields.Boolean(
         string="Loan Order",

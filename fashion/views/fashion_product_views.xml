@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fashion_product_action" model="ir.actions.act_window">
+        <field name="name">Product</field>
+        <field name="res_model">fashion.product</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record id="fashion_product_search" model="ir.ui.view">
+        <field name="name"> fashion.product.search</field>
+        <field name="model">fashion.product</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="product_name"/>
+                <field name="product_types"/>
+                <field name="product_number"/>
+                <field name="product_sale_deal"/>
+                <field name="product_price"/>
+                <field name="product_release_date"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="fashion_product_search_action" model="ir.actions.act_window">
+        <field name="name">Fashion</field>
+        <field name="res_model">fashion.product</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="search_view_id" ref="fashion.fashion_product_search"/>
+    </record>
+
+        <record id="fashion_product_view_activity" model="ir.ui.view">
+        <field name="name">fashion.product.activity</field>
+        <field name="model">fashion.product</field>
+        <field name="arch" type="xml">
+            <activity string="Fashion Customers">
+                <templates>
+                    <div t-name="activity-box">
+<!--                        <div>-->
+<!--                            <field name="customer_name" display="full"/>-->
+<!--                            <field name="id" muted="1" display="full"/>-->
+<!--                        </div>-->
+                    </div>
+                </templates>
+            </activity>
+        </field>
+    </record>
+
+    <record id="fashion_product_tree" model="ir.ui.view">
+        <field name="name"> fashion.product.tree</field>
+        <field name="model">fashion.product</field>
+        <field name="arch" type="xml">
+            <tree string="Product List" sample="1">
+                <field name="product_name"/>
+                <field name="product_types"/>
+                <field name="product_number"/>
+                <field name="product_sale_deal"/>
+                <field name="product_price"/>
+                <field name="product_release_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fashion_product_view" model="ir.ui.view">
+        <field name="name"> fashion.product.form</field>
+        <field name="model">fashion.product</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="product_name"/>
+                            <field name="product_types"/>
+                            <field name="product_number"/>
+                            <field name="product_sale_deal"/>
+                            <field name="product_price"/>
+                            <field name="product_release_date"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+        <record id="fashion_product_kanban" model="ir.ui.view">
+        <field name="name"> fashion.product.kanban</field>
+        <field name="model">fashion.product</field>
+        <field name="arch" type="xml">
+            <kanban>
+<!--                <field name="customer_name"/>-->
+<!--                <field name="customer_dob"/>-->
+<!--                <field name="customer_gender"/>-->
+<!--                <field name="customer_point"/>-->
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>
+                                        Name: <field name="product_name"/>
+                                    </li>
+
+                                    <li>
+                                        Types: <field name="product_types"/>
+                                    </li>
+
+                                    <li>
+                                        Numbers: <field name="product_number"/>
+                                    </li>
+
+                                    <li>
+                                        Prices: <field name="product_price"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

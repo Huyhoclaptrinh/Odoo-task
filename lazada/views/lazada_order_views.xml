@@ -22,16 +22,19 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <form string="Sales Order" class="o_sale_order">
-                <sheet>
-                    <group name="sale.sale_header">
-                        <field name="loan_order"/>
-<!--                        <group name="sale.partner_details">-->
-<!--                            <field name="loan_order"/>-->
-<!--                        </group>-->
-                    </group>
-                </sheet>
-            </form>
+<!--            <form string="Sales Order" class="o_sale_order">-->
+<!--                <sheet>-->
+<!--                    <group name="sale.sale_header">-->
+<!--                        <field name="loan_order"/>-->
+<!--&lt;!&ndash;                        <group name="sale.partner_details">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <field name="loan_order"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </group>&ndash;&gt;-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--            </form>-->
+            <xpath expt="//field[@name='partnaer_id']" position="after">
+                <field name="loan_order"/>
+            </xpath>
         </field>
     </record>
 </odoo>

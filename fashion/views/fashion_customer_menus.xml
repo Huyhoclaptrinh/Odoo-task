@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="fashion_customer_menu_root"
+            name="Fashion"
+            sequence="10"/>
+
+        <menuitem
+            id="fashion_customer_menu_action"
+            name="Customer"
+            action="fashion_customer_action"
+            parent="fashion_customer_menu_root"
+            sequence="5"
+        />
+
+    <menuitem
+            id="fashion_product_menu"
+            name="Product"
+            parent="fashion_customer_menu_root"
+            sequence="8"
+        />
+
+    <menuitem
+            id="fashion_product_menu_action"
+            name="Product"
+            parent="fashion_product_menu"
+            action="fashion_product_action"
+            sequence="8"
+        />
+
+</odoo>
