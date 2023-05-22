@@ -2,6 +2,7 @@
 <odoo>
     <menuitem id="fashion_customer_menu_root"
             name="Fashion"
+              web_icon="fashion,static/description/icon.png"
             sequence="10"/>
 
         <menuitem
